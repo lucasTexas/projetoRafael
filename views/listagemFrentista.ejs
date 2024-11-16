@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Listagem de Frentistas</h2><br><br>
+    <% frentistas.forEach(function(frentista){ %>
+        Nome: <%= frentista.nome %><br>
+        Email: <%= frentista.email %><br>
+        Salário: <%= frentista.salario %><br><br>
+    <% }) %>
+</body>
+</html>

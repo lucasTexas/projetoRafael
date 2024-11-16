@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Listagem de Abastecimentos</h2><br><br>
+    <% abastecimentos.forEach(function(abastecimento){ %>
+        Tipo de Combustível: <%= abastecimento.tipoCombustivel %><br>
+        Data: <%= abastecimento.data %><br>
+        Valor: <%= abastecimento.valor %><br><br>
+    <% }) %>
+</body>
+</html>
