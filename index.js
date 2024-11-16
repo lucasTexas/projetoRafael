@@ -56,10 +56,32 @@ app.post("/salvar-abastecimento", async function(req, res){
         //id: novoId,
         tipoCombustivel: abastecimento.combustivel,
         data: abastecimento.data,
+        hora: abastecimento.hora,
         valor: abastecimento.valor
     });
     await novoAbastecimento.save();
     res.redirect("/");
 });
 
-app.listen("999", "localhost", () => console.log("rodando"));
+app.get("/detalhar-frentista/:email", async function(req, res){
+    const email = req.params.email;
+    const frentista = await FrentistaModel.findOne({email: email});
+    res.render("detalharFrentista", {frentista});
+    console.log(frentista);
+});
+
+app.get("/detalhar-abastecimento/:data/:hora", async function(req, res){
+    const data = req.params.data;
+    const hora = req.params.hora;
+    const abastecimento = await AbastecimentoModel.findOne({data: data, hora: hora});
+    res.render("detalharAbastecimento", {abastecimento});
+});
+
+app.post("/excluir-abastecimento/:data/:hora", async function(req, res){
+    const data = req.params.data;
+    const hora = req.params.hora;
+    await AbastecimentoModel.deleteOne({data: data, hora: hora});
+    res.redirect("listagemAbastecimento");
+});
+
+app.listen("1000", "localhost", () => console.log("rodando"));

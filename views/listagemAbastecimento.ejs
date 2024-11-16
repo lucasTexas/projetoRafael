@@ -10,7 +10,10 @@
     <% abastecimentos.forEach(function(abastecimento){ %>
         Tipo de Combustível: <%= abastecimento.tipoCombustivel %><br>
         Data: <%= abastecimento.data %><br>
-        Valor: <%= abastecimento.valor %><br><br>
+        Hora: <%= abastecimento.hora %><br>
+        Valor: <%= abastecimento.valor %> <br>
+        <a href="/detalhar-abastecimento/<%= abastecimento.data %>/<%= abastecimento.hora %>"><input type="button" value="Detalhar"></a> 
+        <form action="/excluir-abastecimento/<%= abastecimento.data %>/<%= abastecimento.hora %>" method="post"><input type="button" value="Excluir"></form> <br><br> 
     <% }) %>
 </body>
 </html>

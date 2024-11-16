@@ -5,6 +5,7 @@ const abastecimentoSchema = Schema({
     //id: Number,
     tipoCombustivel: String,
     data: String,
+    hora: String,
     valor: Number
 });
 
