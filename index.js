@@ -77,11 +77,17 @@ app.get("/detalhar-abastecimento/:data/:hora", async function(req, res){
     res.render("detalharAbastecimento", {abastecimento});
 });
 
+app.post("/excluir-frentista/:email", async function(req, res){
+    const email = req.params.email
+    await FrentistaModel.deleteOne({email: email});
+    res.redirect("/relatorio-frentista");
+});
+
 app.post("/excluir-abastecimento/:data/:hora", async function(req, res){
     const data = req.params.data;
     const hora = req.params.hora;
     await AbastecimentoModel.deleteOne({data: data, hora: hora});
-    res.redirect("listagemAbastecimento");
+    res.redirect("/relatorio-abastecimento");
 });
 
-app.listen("1000", "localhost", () => console.log("rodando"));
+app.listen("80", "localhost", () => console.log("rodando"));

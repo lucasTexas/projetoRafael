@@ -13,7 +13,7 @@
         Hora: <%= abastecimento.hora %><br>
         Valor: <%= abastecimento.valor %> <br>
         <a href="/detalhar-abastecimento/<%= abastecimento.data %>/<%= abastecimento.hora %>"><input type="button" value="Detalhar"></a> 
-        <form action="/excluir-abastecimento/<%= abastecimento.data %>/<%= abastecimento.hora %>" method="post"><input type="button" value="Excluir"></form> <br><br> 
+        <form action="/excluir-abastecimento/<%= abastecimento.data %>/<%= abastecimento.hora %>" method="post"><input type="submit" value="Excluir"></form> <br><br> 
     <% }) %>
 </body>
 </html>

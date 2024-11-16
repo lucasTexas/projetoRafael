@@ -10,7 +10,8 @@
     <% frentistas.forEach(function(frentista){ %>
         Nome: <%= frentista.nome %><br>
         Email: <%= frentista.email %><br>
-        Salário: <%= frentista.salario %> <a href="/detalhar-frentista/<%= frentista.email %>"><input type="button" value="Detalhar"></a><br><br>
+        Salário: <%= frentista.salario %> <a href="/detalhar-frentista/<%= frentista.email %>"><input type="button" value="Detalhar"></a><br>
+        <form action="/excluir-frentista/<%= frentista.email %>" method="post"><input type="submit" value="Excluir"></form> <br><br> 
     <% }) %>
 </body>
 </html>
