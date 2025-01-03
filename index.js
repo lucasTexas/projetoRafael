@@ -14,4 +14,4 @@ app.get("/", function(req, res){
     res.render("index");
 });
 
-app.listen("80", "localhost", () => console.log("rodando"));
+app.listen("8080", "localhost", () => console.log("rodando"));
