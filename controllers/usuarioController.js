@@ -4,24 +4,25 @@ const bjs = require("bcryptjs");
 
 class UsuarioController {
 
-    static async cadastrar(req, res) {
-        const { nome, email, senha } = req.body;
-        const usuario = await UsuarioModel.findOne({ email });
-        if (usuario != null){
-            res.redirect("usuario/cadastrar?s=1")
-        } else { 
-            const salt = bcryptjs.genSaltSync();
-            const hash =  bcryptjs.hashSync(senha, salt);
-            const novoUsuario = new UsuarioModel({
-                nome,
-                email,
-                senha: hash,
-            });
-            await novoUsuario.save();
-            res.redirect(`/usuarios?s=1`);
-        }
+    static async login(req, res){
+        res.render("login");
+    }
+
+    static async telaCadastro(req, res){
+        res.render("cadastrar");
     }
     
+    static async salvarCadastro(req, res){
+        const usuario = req.body;
+            
+        const novoUsuario = new UsuarioModel({
+            nome: usuario.nome,
+            email: usuario.email,
+            senha: usuario.senha
+        });
+        await novoUsuario.save();
+        res.redirect("/");
+    }
 }
 
 module.exports = UsuarioController;
