@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const UsuarioModel = require("../models/UsuarioModel");
-const bjs = require("bcryptjs");
+//const bjs = require("bcryptjs");
 
 class UsuarioController {
 

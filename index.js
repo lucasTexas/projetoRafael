@@ -6,9 +6,12 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb+srv://ltsf:1234@cluster0.et1su.mongodb.net/?retryWrites=true&w=majority&appName=cluster0");
 const FrentistaRoutes = require("./routes/frentistaRoutes");
 const AbastecimentoRoutes = require("./routes/abastecimentoRoutes");
+const UsuarioRoutes = require("./routes/usuarioRoutes");
+
 
 app.use(FrentistaRoutes);
 app.use(AbastecimentoRoutes);
+app.use(UsuarioRoutes);
 
 app.get("/", function(req, res){
     res.render("index");
