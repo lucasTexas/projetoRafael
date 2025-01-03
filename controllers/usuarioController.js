@@ -27,10 +27,11 @@ class UsuarioController {
     }
 
     static async verificarLogin(req, res){
+        console.log("req.session", req.session);
         const usuario = req.body;
         const verificacao = await UsuarioModel.findOne({email: usuario.email});
         if(verificacao && bjs.compareSync(usuario.senha, verificacao.senha)){
-            req.session.usuario = resultado.email;
+            req.session.usuario = usuario.email;
             res.redirect("/");
         }else{
             res.redirect("/login");
