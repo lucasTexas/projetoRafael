@@ -15,4 +15,6 @@ routes.post("/excluir-abastecimento/:data/:hora", auth, AbastecimentoController.
 
 routes.get("/atualizar-abastecimento/:data/:hora", auth, AbastecimentoController.atualizarAbastecimento);
 
+routes.post("/salvar-atualizacao-abastecimento", auth, AbastecimentoController.salvarAtualizacao);
+
 module.exports = routes;
