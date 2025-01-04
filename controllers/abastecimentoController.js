@@ -36,6 +36,14 @@ class AbastecimentoController{
         await AbastecimentoModel.deleteOne({data: data, hora: hora});
         res.redirect("/relatorio-abastecimento");
     }
+
+    static async atualizarAbastecimento(req, res){
+        const data = req.params.data;
+        const hora = req.params.hora;
+        abastecimento = {data: data, hora: hora}
+        res.render("atualizarAbastecimento", {abastecimento});
+    }
+
 }
 
 module.exports = AbastecimentoController;
