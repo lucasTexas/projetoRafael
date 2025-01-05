@@ -40,14 +40,18 @@ class AbastecimentoController{
     static async atualizarAbastecimento(req, res){
         const data = req.params.data;
         const hora = req.params.hora;
-        const abastecimento = AbastecimentoModel.findOne({data: data, hora: hora});
+        const id = req.params.id;
+        const abastecimento = await AbastecimentoModel.findOne({_id: id});
+        console.log(abastecimento);
         res.render("atualizarAbastecimento", {abastecimento});
     }
 
     static async salvarAtualizacao(req, res){
         const abastecimento = req.body;
+        const id = req.body.id;
+        console.log(id);
         const novoAbastecimento = await AbastecimentoModel.findOneAndUpdate(
-            { data: abastecimento.data, hora:abastecimento.hora },
+            { _id: id },
             { tipoAbastecimento: abastecimento.tipo, data: abastecimento.data, hora: abastecimento.hora, valor: abastecimento.valor },    // Atualização
             { new: true }
         );

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const abastecimentoSchema = Schema({
-    //id: Number,
+    id: Number,
     tipoCombustivel: String,
     data: String,
     hora: String,

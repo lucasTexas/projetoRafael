@@ -13,7 +13,7 @@ routes.get("/detalhar-abastecimento/:data/:hora", auth, AbastecimentoController.
 
 routes.post("/excluir-abastecimento/:data/:hora", auth, AbastecimentoController.excluirAbastecimento);
 
-routes.get("/atualizar-abastecimento/:data/:hora", auth, AbastecimentoController.atualizarAbastecimento);
+routes.get("/atualizar-abastecimento/:id", auth, AbastecimentoController.atualizarAbastecimento);
 
 routes.post("/salvar-atualizacao-abastecimento", auth, AbastecimentoController.salvarAtualizacao);
 

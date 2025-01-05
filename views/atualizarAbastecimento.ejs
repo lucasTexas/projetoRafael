@@ -10,10 +10,11 @@
 <body>
     <h2>Editar Abastecimento</h2>
     <form action="/salvar-atualizacao-abastecimento" method="post">
-        <input type="hidden" name="id" value="<%= abastecimento._id %>">
+        
+        <input type="hidden" value="<%= abastecimento._id %>" name="id">
 
-        <label for="combustivel">Tipo de Combustível:</label><br>
-        <input type="text" name="combustivel" id="combustivel" value="<%= abastecimento.combustivel %>"><br><br>
+        <label for="tipo">Tipo de Combustível:</label><br>
+        <input type="text" name="tipo" id="tipo" value="<%= abastecimento.tipoCombustivel %>"><br><br>
 
         <label for="data">Data do Abastecimento:</label><br>
         <input type="text" name="data" id="data" value="<%= abastecimento.data %>"><br><br>
