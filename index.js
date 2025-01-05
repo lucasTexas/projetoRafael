@@ -2,10 +2,11 @@ const express = require("express");
 const app = express();
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true}));
+require('dotenv/config');
 const session = require("express-session");
 const auth = require("./middlewares/usuarioAuth");
 const mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://ltsf:1234@cluster0.et1su.mongodb.net/?retryWrites=true&w=majority&appName=cluster0");
+mongoose.connect(process.env.MONGO_URL);
 
 app.use(session({
     secret: 'ifpe',
@@ -28,4 +29,4 @@ app.get("/", auth, function(req, res){
 });
 
 
-app.listen("8080", "localhost", () => console.log("rodando"));
+app.listen(process.env.PORT, "localhost", () => console.log("rodando"));
