@@ -14,7 +14,8 @@
         Email: <%= frentista.email %><br>
         Salário: <%= frentista.salario %> <br>
         <a href="/detalhar-frentista/<%= frentista.email %>"><input type="button" value="Detalhar"></a><br>
-        <form action="/excluir-frentista/<%= frentista.email %>" method="post"><input type="submit" value="Excluir"></form> <br><br> 
+        <form action="/excluir-frentista/<%= frentista.email %>" method="post"><input type="submit" value="Excluir"></form> <br> 
+        <form action="/atualizar-frentista/<%= frentista.email %>" method="get"><input type="submit" value="Atualizar"></form> <br><br> 
     <% }) %>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

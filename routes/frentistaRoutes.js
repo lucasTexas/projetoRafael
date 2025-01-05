@@ -13,4 +13,8 @@ routes.get("/detalhar-frentista/:email", auth, FrentistaController.detalharFrent
 
 routes.post("/excluir-frentista/:email", auth, FrentistaController.excluirFrentista);
 
+routes.get("/atualizar-frentista/:email", auth, FrentistaController.atualizarFrentista);
+
+routes.post("/salvar-atualizacao-frentista", auth, FrentistaController.salvarAtualizacao);
+
 module.exports = routes;
